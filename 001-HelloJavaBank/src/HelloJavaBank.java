@@ -50,7 +50,7 @@ public class HelloJavaBank {
 
         System.out.println("Unser Kontostand beträgt jetzt gerundet: " + (int)kontostand);  // Typenumwandlng ohne den Wert in die Variable zu übernehmen
                                                                                             // sondern nur auszugeben
-        System.out.println("Unser Tagesbuged: " + (int)(kontostand / tage_im_monat));       // aktuellen kontostand dividiert durch die Anzahl der Tage
+        System.out.println("Unser Tagesbudget: " + (int)(kontostand / tage_im_monat));       // aktuellen kontostand dividiert durch die Anzahl der Tage
                                                                                             // im Monat und einfach gerundet (abgeschnitten nach dem Komma)
         System.out.println("Unser Kontostand komplett: " + kontostand + "Euro");            // Kontostand mit Währung
     }
