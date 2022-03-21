@@ -15,7 +15,7 @@
 */
 public class Aufgabe7WhileSimple {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
     String result = "";
     int i = 1;

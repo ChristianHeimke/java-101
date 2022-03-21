@@ -12,22 +12,22 @@
 */
 public class Aufgabe5While {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
     int n = 23;     // Eingabe
-		int count = 0;  // Anzahl wie oft die 2 in die Zahl passt
+    int count = 0;  // Anzahl wie oft die 2 in die Zahl passt
 
-		int temp_n = n; // nur zur Zwischenspeicherung
+    int temp_n = n; // nur zur Zwischenspeicherung
 
-		while (temp_n > 0) {
+    while (temp_n > 0) {
 
-			if ((temp_n % 2) == 0) {
-				count++;
-			}
+    	if ((temp_n % 2) == 0) {
+        count++;
+    	}
 
-			temp_n--;
-		}
+    	temp_n--;
+    }
 
-		System.out.println("Die Zahl 2 passt " + count + " Mal in " + n);
+    System.out.println("Die Zahl 2 passt " + count + " Mal in " + n);
   }
 }

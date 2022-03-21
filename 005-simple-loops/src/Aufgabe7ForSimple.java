@@ -14,11 +14,12 @@
 
 */
 public class Aufgabe7ForSimple {
-	public static void main(String[] args) {
+
+  public static void main(String[] args) {
 
     String result = "";
 
-		for(int i = 1; i < 10; i++){
+    for(int i = 1; i < 10; i++){
       result += String.valueOf(i);
 
       System.out.println(result);

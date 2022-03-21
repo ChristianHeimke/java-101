@@ -11,7 +11,8 @@
 
 */
 public class Aufgabe5For {
-	public static void main(String[] args) {
+
+  public static void main(String[] args) {
 
     int n = 23;     // Eingabe
 		int count = 0;  // Anzahl wie oft die 2 in die Zahl passt

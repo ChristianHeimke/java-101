@@ -4,7 +4,8 @@
 
 */
 public class Aufgabe4For {
-	public static void main(String[] args) {
+
+  public static void main(String[] args) {
 
     //    i += 2 ist Äquivalent zu
     //    i = i + 2

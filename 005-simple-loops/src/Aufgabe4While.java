@@ -5,7 +5,7 @@
 */
 public class Aufgabe4While {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
     int i = 0;
 

@@ -15,7 +15,7 @@
 */
 public class Aufgabe8While {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
     int i = 0;
     int j = 0;
