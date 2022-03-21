@@ -21,11 +21,11 @@ public class Aufgabe5While {
 
     while (temp_n > 0) {
 
-    	if ((temp_n % 2) == 0) {
+      if ((temp_n % 2) == 0) {
         count++;
-    	}
+      }
 
-    	temp_n--;
+      temp_n--;
     }
 
     System.out.println("Die Zahl 2 passt " + count + " Mal in " + n);

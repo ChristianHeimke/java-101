@@ -15,14 +15,14 @@ public class Aufgabe5For {
   public static void main(String[] args) {
 
     int n = 23;     // Eingabe
-		int count = 0;  // Anzahl wie oft die 2 in die Zahl passt
+    int count = 0;  // Anzahl wie oft die 2 in die Zahl passt
 
-		for(int i = n; i > 0; i--){
+    for(int i = n; i > 0; i--){
       if ((i % 2) == 0) {
-				count++;
-			}
+        count++;
+      }
     }
 
-		System.out.println("Die Zahl 2 passt " + count + " Mal in " + n);
+    System.out.println("Die Zahl 2 passt " + count + " Mal in " + n);
   }
 }
