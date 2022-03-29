@@ -33,10 +33,10 @@ public class Calculator {
         System.out.println("Ergebnis der Subtraktion: " + sub(zahl1, zahl2));
         break;
       case 3:
-        System.out.println("Ergebnis der Multiplikation: " + sub(zahl1, zahl2));
+        System.out.println("Ergebnis der Multiplikation: " + mul(zahl1, zahl2));
         break;
       case 4:
-        System.out.println("Ergebnis der Division: " + sub(zahl1, zahl2));
+        System.out.println("Ergebnis der Division: " + div(zahl1, zahl2));
         break;
       case 5:
         System.out.println("Ergebnis der Addition: " + add(zahl1, zahl2));
