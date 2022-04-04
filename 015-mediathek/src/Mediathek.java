@@ -1,5 +1,6 @@
 public class Mediathek {
   private Buch[] buecherRegal;
+  private int instanzen = 0;
 
   public Mediathek(int groesse){
     this.buecherRegal = new Buch[groesse];
@@ -12,6 +13,7 @@ public class Mediathek {
       if(this.buecherRegal[i] == null){
         this.buecherRegal[i] = buch;
         eingelagert = true;
+        instanzen++;
         System.out.println("Buch wurde eingelagert");
         break;
       }
@@ -24,5 +26,9 @@ public class Mediathek {
 
   public Buch[] getBuecherRegal(){
     return this.buecherRegal;
+  }
+
+  public int getInstanzen(){
+    return this.instanzen;
   }
 }

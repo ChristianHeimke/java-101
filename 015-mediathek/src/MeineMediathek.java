@@ -11,9 +11,11 @@ public class MeineMediathek {
 
     Mediathek meineMediathek = new Mediathek(2);
     meineMediathek.aufnehmen(buch1);
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
     meineMediathek.aufnehmen(buch2);
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
     meineMediathek.aufnehmen(buch3);
-
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
 
   }
 }
