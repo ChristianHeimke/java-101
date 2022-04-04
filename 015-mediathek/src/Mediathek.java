@@ -4,16 +4,25 @@ public class Mediathek {
   private Buch[] buecherRegal;
   private CD[] cdRegal;
 
+  /**
+   *
+   ****************************************************************************/
   public Mediathek() {
     this.buecherRegal = new Buch[1];
     this.cdRegal = new CD[1];
   }
 
+  /**
+   *
+   ****************************************************************************/
   public Mediathek(int groesse) {
     this.buecherRegal = new Buch[groesse];
     this.cdRegal = new CD[groesse];
   }
 
+  /**
+   *
+   ****************************************************************************/
   public void aufnehmen(Buch buch) {
     boolean eingelagert = false;
 
@@ -37,6 +46,9 @@ public class Mediathek {
     System.out.println("Buch wurde eingelagert");
   }
 
+  /**
+   *
+   ****************************************************************************/
   public void aufnehmen(CD cd) {
     boolean eingelagert = false;
 
@@ -59,10 +71,16 @@ public class Mediathek {
     System.out.println("CD wurde eingelagert");
   }
 
+  /**
+   *
+   ****************************************************************************/
   public Buch[] getBuecherRegal() {
     return this.buecherRegal;
   }
 
+  /**
+   *
+   ****************************************************************************/
   public int getInstanzenBuch() {
     int anzahl = 0;
 
@@ -77,6 +95,9 @@ public class Mediathek {
     return anzahl;
   }
 
+  /**
+   *
+   ****************************************************************************/
   public int getInstanzenCD() {
     int anzahl = 0;
 
@@ -91,12 +112,17 @@ public class Mediathek {
     return anzahl;
   }
 
+  /**
+   *
+   ****************************************************************************/
   public int getInstanzenAlle() {
     return this.getInstanzenBuch() + this.getInstanzenCD();
   }
 
-  // Methode zum direkten ausgeben des Inhalts der Mediathek,
-  // erst die Bücher, dann die CDs
+  /**
+   * Methode zum direkten ausgeben des Inhalts der Mediathek,
+   * erst die Bücher, dann die CDs
+   ****************************************************************************/
   public String toString() {
     String ausgabe = "";
 
