@@ -26,4 +26,16 @@ public class Buch {
     return this.seitenanzahl;
   }
 
+  public void setTitel(String titel){
+    this.titel = titel;
+  }
+
+  public void setAutor(String autor){
+    this.autor = autor;
+  }
+
+  public void setSeitenanzahl(int seitenanzahl){
+    this.seitenanzahl = seitenanzahl;
+  }
+
 }

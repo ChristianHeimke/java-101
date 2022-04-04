@@ -26,4 +26,16 @@ public class CD {
     return this.laenge;
   }
 
+  public void setTitel(String titel){
+    this.titel = titel;
+  }
+
+  public void setInterpret(String interpret){
+    this.interpret = interpret;
+  }
+
+  public void setLaenge(int laenge){
+    this.laenge = laenge;
+  }
+
 }
