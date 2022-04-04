@@ -1,9 +1,13 @@
 public class Mediathek {
   private Buch[] buecherRegal;
-  private int instanzen = 0;
+  private CD[] cdRegal;
+
+  private int instanzenBuch = 0;
+  private int instanzenCD = 0;
 
   public Mediathek(int groesse){
     this.buecherRegal = new Buch[groesse];
+    this.cdRegal = new CD[groesse];
   }
 
   public void aufnehmen(Buch buch){
@@ -13,14 +17,32 @@ public class Mediathek {
       if(this.buecherRegal[i] == null){
         this.buecherRegal[i] = buch;
         eingelagert = true;
-        instanzen++;
+        instanzenBuch++;
         System.out.println("Buch wurde eingelagert");
         break;
       }
     }
 
     if(!eingelagert){
-      System.out.println("Mediathek ist leider voll!");
+      System.out.println("Mediathek für Bücher ist leider voll!");
+    }
+  }
+
+  public void aufnehmen(CD cd){
+    boolean eingelagert = false;
+
+    for(int i = 0; i < this.cdRegal.length; i++){
+      if(this.cdRegal[i] == null){
+        this.cdRegal[i] = cd;
+        eingelagert = true;
+        instanzenCD++;
+        System.out.println("CD wurde eingelagert");
+        break;
+      }
+    }
+
+    if(!eingelagert){
+      System.out.println("Mediathek für CDs ist leider voll!");
     }
   }
 
@@ -28,7 +50,15 @@ public class Mediathek {
     return this.buecherRegal;
   }
 
-  public int getInstanzen(){
-    return this.instanzen;
+  public int getInstanzenBuch(){
+    return this.instanzenBuch;
+  }
+
+  public int getInstanzenCD(){
+    return this.instanzenCD;
+  }
+
+  public int getInstanzenAlle(){
+    return this.instanzenCD + this.instanzenBuch;
   }
 }

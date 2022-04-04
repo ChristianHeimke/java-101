@@ -10,12 +10,20 @@ public class MeineMediathek {
     CD cd3 = new CD("I've got a magic stream", "Mr. Incredible");
 
     Mediathek meineMediathek = new Mediathek(2);
+
     meineMediathek.aufnehmen(buch1);
-    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzenBuch());
     meineMediathek.aufnehmen(buch2);
-    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzenBuch());
     meineMediathek.aufnehmen(buch3);
-    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzen());
+    System.out.println("Anzahl eingelagerter Bücher: " + meineMediathek.getInstanzenBuch());
+
+    meineMediathek.aufnehmen(cd1);
+    System.out.println("Anzahl eingelagerter CDs: " + meineMediathek.getInstanzenCD());
+    meineMediathek.aufnehmen(cd2);
+    System.out.println("Anzahl eingelagerter CDs: " + meineMediathek.getInstanzenCD());
+    meineMediathek.aufnehmen(cd3);
+    System.out.println("Anzahl eingelagerter CDs: " + meineMediathek.getInstanzenCD());
 
   }
 }
