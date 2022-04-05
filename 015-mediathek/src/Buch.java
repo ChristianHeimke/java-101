@@ -1,8 +1,14 @@
-public class Buch {
-  private String titel;
+public class Buch extends Medium{
   private String autor;
   private int seitenanzahl;
+  private BuchGenre genre;
 
+  /**
+   *
+   ****************************************************************************/
+  public Buch(String titel){
+    this.titel = titel;
+  }
   /**
    *
    ****************************************************************************/
@@ -23,6 +29,22 @@ public class Buch {
   /**
    *
    ****************************************************************************/
+ public Buch(String titel, String autor, int seitenanzahl, BuchGenre genre){
+    this.titel = titel;
+    this.autor = autor;
+    this.seitenanzahl = seitenanzahl;
+    this.genre = genre;
+  }
+
+  /**
+   *
+   ****************************************************************************/
+ public String toString(){
+    return "";
+  }
+  /**
+   *
+   ****************************************************************************/
   public String getTitel(){
     return this.titel;
   }
@@ -39,6 +61,13 @@ public class Buch {
    ****************************************************************************/
   public int getSeitenanzahl(){
     return this.seitenanzahl;
+  }
+
+  /**
+   *
+   ****************************************************************************/
+  public BuchGenre getBuchgenre(){
+    return this.genre;
   }
 
   /**

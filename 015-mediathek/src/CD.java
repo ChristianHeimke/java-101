@@ -1,5 +1,4 @@
-public class CD {
-  private String titel;
+public class CD extends Medium{
   private String interpret;
   private int laenge;
 

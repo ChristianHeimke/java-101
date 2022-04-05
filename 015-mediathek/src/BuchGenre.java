@@ -1,0 +1,8 @@
+public enum BuchGenre {
+  ROMAN,
+  FANTASY,
+  KRIMI,
+  FACHLITERATUR,
+  SCIENCE_FICTION,
+  THRILLER
+}
