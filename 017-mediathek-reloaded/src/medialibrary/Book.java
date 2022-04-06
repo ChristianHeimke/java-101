@@ -33,4 +33,12 @@ public class Book extends Medium {
 	public BookGenre getGenre() {
 		return this.genre;
 	}
+	
+	@Override
+	public void lend(String lender) {
+		if (isLend()) {
+			System.out.println("Buch ist bereits ausgeliehen!");
+		}
+		super.lend(lender);
+	}
 }

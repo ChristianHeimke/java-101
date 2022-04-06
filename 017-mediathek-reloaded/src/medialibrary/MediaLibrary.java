@@ -1,110 +1,86 @@
 package medialibrary;
 
 public class MediaLibrary {
-	private Book[] bookArray;
-	private CD[] cdArray;
-	
+	private Medium[] mediumArray;
+
 	public static void copy(Medium[] source, Medium[] destination) {
 		if (source.length <= destination.length) {
 			for (int i = 0; i < source.length; i++) {
 				destination[i] = source[i];
 			}
 		} else {
-			System.out.println("Kopieren des Arrays nicht möglich: Zielarray ist zu klein!");
+			System.out.println("Kopieren des Arrays nicht moeglich: Zielarray ist zu klein!");
 		}
 	}
-	
-	public MediaLibrary(int bookArraySize, int cdArraySize) {
-		this.bookArray= new Book[bookArraySize];
-		this.cdArray = new CD[cdArraySize];
+
+	public MediaLibrary(int size) {
+		this.mediumArray = new Medium[size];
 	}
-	
-	public Book[] getBookArray() {
-		return this.bookArray;
+
+	public Medium[] getMediunArray() {
+		return this.mediumArray;
 	}
-	
-	public CD[] getCDArray() {
-		return this.cdArray;
-	}
-	
-	public void add(Book book) {
-		boolean containsBook = false;
-		for (int i = 0; i < this.bookArray.length; i++) {
-			if (this.bookArray[i] == null) {
-				this.bookArray[i] = book;
-				containsBook = true;
+
+	public void add(Medium medium) {
+		boolean containsMedium = false;
+		for (int i = 0; i < this.mediumArray.length; i++) {
+			if (this.mediumArray[i] == null) {
+				this.mediumArray[i] = medium;
+				containsMedium = true;
 				break;
 			}
 		}
-		
-		if (!containsBook) {
-			resizeBookArray();
-			add(book);
+
+		if (!containsMedium) {
+			resize();
+			add(medium);
 		}
 	}
-	
-	public void add(CD cd) {
-		boolean containsCD = false;
-		for (int i = 0; i < this.cdArray.length; i++) {
-			if (this.cdArray[i] == null) {
-				this.cdArray[i] = cd;
-				containsCD = true;
-				break;
-			}
-		}
-		
-		if (!containsCD) {
-			resizeCdArray();
-			add(cd);
-		}
+
+	private void resize() {
+		Medium[] newMediumArray = new Medium[2 * this.mediumArray.length];
+		copy(this.mediumArray, newMediumArray);
+		this.mediumArray = newMediumArray;
 	}
-	
+
 	public boolean containsBookWithTitle(String title) {
-		for (Book book : this.bookArray) {
-			if (book.getTitle().contains(title)) {
+		for (Medium medium : this.mediumArray) {
+			if (medium instanceof Book && ((Book) medium).getTitle().contains(title)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	public void print() {
 		System.out.println(getSummary());
 	}
-	
+
 	public String getSummary() {
-		final StringBuilder summary = new StringBuilder();
-		
-		summary.append("Bücher:\n");
-		for (Book book : this.bookArray) {
-			summary.append("Titel: ")
-					.append(book.getTitle())
-					.append(", Autor: ")
-					.append(book.getAuthor())
-					.append("\n");
+		final StringBuilder bookSummary = new StringBuilder();
+		final StringBuilder cdSummary = new StringBuilder();
+
+		bookSummary.append("Buecher:\n");
+		cdSummary.append("CDs:\n");
+
+		for (Medium medium : this.mediumArray) {
+			if (medium instanceof Book) {
+				final Book book = (Book) medium;
+				bookSummary.append("Titel: ")
+						.append(book.getTitle())
+						.append(", Autor: ")
+						.append(book.getAuthor())
+						.append("\n");
+			} else if (medium instanceof CD) {
+				final CD cd = (CD) medium;
+				cdSummary.append("Titel: ")
+						.append(cd.getTitle())
+						.append(", Interpret: ")
+						.append(cd.getInterpret())
+						.append("\n");
+			}
 		}
-		
-		summary.append("CDs:\n");
-		for (CD cd : this.cdArray) {
-			summary.append("Titel: ")
-					.append(cd.getTitle())
-					.append(", Interpret: ")
-					.append(cd.getInterpret())
-					.append("\n");
-		}
-		
-		return summary.toString();
-	}
-	
-	private void resizeBookArray() {
-		Book[] newBookArray = new Book[2 * this.bookArray.length];
-		copy(this.bookArray, newBookArray);
-		this.bookArray = newBookArray;
-	}
-	
-	private void resizeCdArray() {
-		CD[] newCdArray = new CD[2 * this.cdArray.length];
-		copy(this.cdArray, newCdArray);
-		this.cdArray = newCdArray;
+
+		return bookSummary.append(cdSummary).toString();
 	}
 }

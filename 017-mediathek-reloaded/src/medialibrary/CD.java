@@ -32,4 +32,12 @@ public class CD extends Medium {
 	public CDGenre getGenre() {
 		return this.genre;
 	}
+	
+	@Override
+	public void lend(String lender) {
+		if (isLend()) {
+			System.out.println("CD ist bereits ausgeliehen!");
+		}
+		super.lend(lender);
+	}
 }
