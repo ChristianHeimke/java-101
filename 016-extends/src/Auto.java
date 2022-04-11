@@ -18,7 +18,7 @@ public class Auto extends Fahrzeug {
   }
 
   public void fahren(){
-    super.fahren();
+
     System.out.println("Einsteigen");
     System.out.println("Motor starten");
     System.out.println("Gang einlegen");
