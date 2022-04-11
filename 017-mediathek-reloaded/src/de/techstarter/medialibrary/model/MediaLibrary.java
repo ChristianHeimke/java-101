@@ -1,6 +1,7 @@
-package medialibrary;
+package de.techstarter.medialibrary.model;
 
 public class MediaLibrary {
+	private static final int DEFAULT_ARRAY_SIZE = 2;
 	private Medium[] mediumArray;
 
 	public static void copy(Medium[] source, Medium[] destination) {
@@ -9,29 +10,29 @@ public class MediaLibrary {
 				destination[i] = source[i];
 			}
 		} else {
-			System.out.println("Kopieren des Arrays nicht moeglich: Zielarray ist zu klein!");
+			System.out.println("Kopieren des Arrays nicht möglich: Zielarray ist zu klein!");
 		}
 	}
 
 	public MediaLibrary(int size) {
-		this.mediumArray = new Medium[size];
+		this.mediumArray = new Medium[DEFAULT_ARRAY_SIZE];
 	}
 
-	public Medium[] getMediunArray() {
+	public Medium[] getMediumArray() {
 		return this.mediumArray;
 	}
 
 	public void add(Medium medium) {
-		boolean containsMedium = false;
+		boolean hasEmptyIndex = false;
 		for (int i = 0; i < this.mediumArray.length; i++) {
 			if (this.mediumArray[i] == null) {
 				this.mediumArray[i] = medium;
-				containsMedium = true;
+				hasEmptyIndex = true;
 				break;
 			}
 		}
 
-		if (!containsMedium) {
+		if (!hasEmptyIndex) {
 			resize();
 			add(medium);
 		}
@@ -65,19 +66,9 @@ public class MediaLibrary {
 
 		for (Medium medium : this.mediumArray) {
 			if (medium instanceof Book) {
-				final Book book = (Book) medium;
-				bookSummary.append("Titel: ")
-						.append(book.getTitle())
-						.append(", Autor: ")
-						.append(book.getAuthor())
-						.append("\n");
+				bookSummary.append(medium).append("\n");
 			} else if (medium instanceof CD) {
-				final CD cd = (CD) medium;
-				cdSummary.append("Titel: ")
-						.append(cd.getTitle())
-						.append(", Interpret: ")
-						.append(cd.getInterpret())
-						.append("\n");
+				cdSummary.append(medium).append("\n");
 			}
 		}
 

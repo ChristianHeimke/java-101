@@ -1,4 +1,4 @@
-package medialibrary;
+package de.techstarter.medialibrary;
 
 public class MediaLibraryTest {
 
