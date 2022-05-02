@@ -1,6 +1,7 @@
 package main;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -20,7 +21,7 @@ public class BookWriter {
 		for (Book book : books) {
 			// Writer öffnen
 			// legt eine Datei mit einer eindeutigen ID (uuid) an
-			String filePath = path + "/" + UUID.randomUUID().toString() + ".csv";
+			String filePath = path + File.separatorChar + UUID.randomUUID().toString() + ".csv";
 
 			try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath))) {
 				// Buch als String (bereits kommagetrennt) umwandeln und schreiben
