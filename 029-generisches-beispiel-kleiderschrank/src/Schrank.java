@@ -76,8 +76,8 @@ class Schrank {
     ausgabefunktion
   ************************************************************************************************/
   @Override
-	public String toString() {
-		String str = "";
+  public String toString() {
+    String str = "";
 
     str += "Hemden (" + this.fachHemden.anzahl() + "):\n";
     str += this.fachHemden + "\n";
@@ -90,7 +90,7 @@ class Schrank {
 
 
     return str;
-	}
+  }
 
   /*
     konvertiert den inhalt der fächer zu CSV

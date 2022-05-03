@@ -23,8 +23,8 @@ public class Anzug extends Kleidung {
   // Ausgabefunktion, ebenfalls ein Spezialfall bei dem wir die .toString() Methode des
   // jeweiligen Kleidungsstücks aufrufen
   @Override
-	public String toString() {
+  public String toString() {
     return "Hose: " + this.hose + ", Hemd: " + this.hemd + ", Socken: " + this.socken;
-	}
+  }
 
 }

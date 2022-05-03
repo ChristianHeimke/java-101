@@ -14,8 +14,8 @@ public class Kleidung implements IExport{
 
   // Ausgabefunktion
   @Override
-	public String toString() {
-		return "Farbe: " + this.farbe + " - Größe: " + this.groesse;
-	}
+  public String toString() {
+    return "Farbe: " + this.farbe + " - Größe: " + this.groesse;
+  }
 
 }

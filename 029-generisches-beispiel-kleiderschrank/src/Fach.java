@@ -53,15 +53,15 @@ public class Fach<T extends IExport> {
 
   // Ausgabe Methode, die nur die .toString() Methode aufruft
   @Override
-	public String toString() {
+  public String toString() {
     String str = "";
 
     for(T obj : this.inhalt){
       str += "* " +  obj + "\n";
     }
 
-		return str;
-	}
+    return str;
+  }
 
 
 }
