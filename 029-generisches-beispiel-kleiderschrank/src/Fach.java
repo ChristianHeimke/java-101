@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Fach<T> {
+public class Fach<T extends IExport> {
 
   // Generische Liste die alle Objekte enthält die wir hinzufügen
   private List<T> inhalt = new LinkedList();
@@ -38,5 +38,30 @@ public class Fach<T> {
   boolean isEmpty(){
     return this.inhalt.isEmpty();
   }
+
+  // Methode bei dem generisch die Objekte in einem Fach entsprechend zu csv konvertiert werden
+  // und einen kombinierten String zurückgibt
+  public String toCSV() {
+    String csv = "";
+
+    for (T obj : this.inhalt) {
+      csv +=  obj.toCSV() + "\n";
+    }
+
+    return csv;
+  }
+
+  // Ausgabe Methode, die nur die .toString() Methode aufruft
+  @Override
+	public String toString() {
+    String str = "";
+
+    for(T obj : this.inhalt){
+      str += "* " +  obj + "\n";
+    }
+
+		return str;
+	}
+
 
 }
