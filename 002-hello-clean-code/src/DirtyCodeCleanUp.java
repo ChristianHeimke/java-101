@@ -7,7 +7,7 @@
 class DirtyCodeCleanUp {
 	public static void main(String[] ignored) {
 		int zero = 0;
-		int one = 1;
+		int one = 2;
 		int whatsThis = zero;
 
 		whatsThis = one;
